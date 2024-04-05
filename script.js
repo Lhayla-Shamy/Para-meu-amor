@@ -9,13 +9,15 @@ function selectOption(option) {
             document.getElementById('question').style.display = 'none'; // Hide the question
             displayCatHeart(); // Display the cat-heart.gif
         });
-    } else if (option === 'no') {
+    } else if (option === 'yes2') {
         // Change text on the "No" button to "You sure?"
-        document.getElementById('no-button').innerText = 'Tem certeza?'; 
         // Increase font size of "Yes" button
         var yesButton = document.getElementById('yes-button');
+        flashRainbowColors(function() {
+            document.getElementById('question').style.display = 'none'; // Hide the question
+            displayCatHeart(); // Display the cat-heart.gif
+        });
         var currentFontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
-        var newSize = parseFloat(currentFontSize) * 2; // Increase font size by  * 2px
         yesButton.style.fontSize = newSize + 'px';
     } else {
         // If neither "Yes" nor "No" was clicked, show an alert message
@@ -78,3 +80,4 @@ function displayCatHeart() {
 
 // Display the cat.gif initially
 displayCat();
+
